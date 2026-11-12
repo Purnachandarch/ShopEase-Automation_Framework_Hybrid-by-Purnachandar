@@ -1,0 +1,18 @@
+
+# Maven
+target/
+
+# TestNG and Extent Reports
+test-output/
+
+# Allure Reports
+allure-results/
+allure-report/
+
+# Logs
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
