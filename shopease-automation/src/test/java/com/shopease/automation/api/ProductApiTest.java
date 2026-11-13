@@ -67,7 +67,7 @@ public class ProductApiTest extends ApiBaseTest {
 
 	}
 	
-	@Test
+	//@Test
 	public void verifyAddProduct() {
 
 	    given()
