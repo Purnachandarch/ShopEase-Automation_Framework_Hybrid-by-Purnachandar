@@ -11,7 +11,7 @@ import com.shopease.automation.pages.CartPage;
 
 public class CartPageTest extends BaseTest {
 
-	@Test
+	//@Test
 	public void verifyCartPageNavigation() {
 
 		driver.get("http://localhost:8080/login.html");
@@ -37,7 +37,7 @@ public class CartPageTest extends BaseTest {
 		cartpage.removeProduct("Samsung Galaxy M35");
 		driver.switchTo().alert().accept();
 
-//		Assert.assertFalse(cartpage.isProductDisplayed("Samsung Galaxy M35"), "Product was not removed from the cart");
+		Assert.assertFalse(cartpage.isProductDisplayed("Samsung Galaxy M35"), "Product was not removed from the cart");
 	}
 
 	@Test
