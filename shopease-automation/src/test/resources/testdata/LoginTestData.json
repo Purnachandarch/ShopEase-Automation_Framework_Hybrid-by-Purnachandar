@@ -1,0 +1,17 @@
+[
+  {
+    "email": "Userthird@gmail.com",
+    "password": "Userthird@123",
+    "expectedResult": true
+  },
+  {
+    "email": "customer2@example.com",
+    "password": "TestPassword2",
+    "expectedResult": true
+  },
+  {
+    "email": "invalid@example.com",
+    "password": "InvalidPassword",
+    "expectedResult": false
+  }
+]
