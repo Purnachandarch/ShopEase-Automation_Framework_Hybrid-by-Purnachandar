@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    tools {
+        jdk 'JDK21'
+        maven 'Maven3'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out ShopEase Automation Framework'
+            }
+        }
+
+        stage('Execute Tests') {
+            steps {
+                dir('shopease-automation') {
+                    bat 'mvn clean test'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'ShopEase Automation Pipeline execution completed'
+        }
+
+        success {
+            echo 'Automation tests passed successfully!'
+        }
+
+        failure {
+            echo 'Automation tests failed. Check console output.'
+        }
+    }
+}
