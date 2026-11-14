@@ -29,6 +29,8 @@ pipeline {
             }
         }
     }
+    
+    
 }
 
 
@@ -36,6 +38,9 @@ pipeline {
     post {
         always {
             echo 'ShopEase Automation Pipeline execution completed'
+             testNG(
+        reportFilenamePattern: 'shopease-automation/target/surefire-reports/testng-results.xml'
+    )
         }
 
         success {
