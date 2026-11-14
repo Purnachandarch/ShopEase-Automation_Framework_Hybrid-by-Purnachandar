@@ -40,6 +40,16 @@ pipeline {
             echo 'ShopEase Automation Pipeline execution completed'
              testNG(
         reportFilenamePattern: 'shopease-automation/target/surefire-reports/testng-results.xml'
+        
+        publishHTML(target: [
+    reportDir: 'shopease-automation/test-output',
+    reportFiles: '*.html',
+    reportName: 'Extent Reports',
+    keepAll: true,
+    alwaysLinkToLastBuild: true,
+    allowMissing: false
+])
+        
     )
         }
 
