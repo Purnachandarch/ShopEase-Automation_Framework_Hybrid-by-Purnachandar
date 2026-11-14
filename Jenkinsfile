@@ -8,20 +8,30 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                echo 'Checking out ShopEase Automation Framework'
-            }
+    stage('Checkout') {
+        steps {
+            echo 'Checking out ShopEase Automation Framework'
         }
+    }
 
-        stage('Execute Tests') {
-            steps {
-                dir('shopease-automation') {
-                    bat 'mvn clean test'
-                }
+    stage('Build') {
+        steps {
+            dir('shopease-automation') {
+                bat 'mvn clean compile'
             }
         }
     }
+
+    stage('Execute Tests') {
+        steps {
+            dir('shopease-automation') {
+                bat 'mvn test'
+            }
+        }
+    }
+}
+
+
 
     post {
         always {
