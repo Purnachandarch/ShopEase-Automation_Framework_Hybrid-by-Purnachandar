@@ -37,6 +37,7 @@ public class LoginTest extends BaseTest {
 		Thread.sleep(2000);
 
 		String currentUrl = driver.getCurrentUrl();
+		System.out.println("Login Success");
 
 		//Assert.assertTrue(currentUrl.contains("index.html"), "Login failed or homepage redirect did not happen");
 
