@@ -13,6 +13,9 @@ import org.testng.ITestResult;
 import com.shopease.automation.utils.ScreenshotUtils;
 import com.shopease.automation.utils.ConfigReader;
 import com.shopease.automation.utils.ExtentReportManager;
+
+import java.io.IOException;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterClass;
@@ -23,7 +26,7 @@ public class BaseTest {
 
 	protected WebDriver driver;
 	@BeforeClass
-	public void initializeExtentReport() {
+	public void initializeExtentReport() throws IOException {
 
 	    ExtentReportManager.initialize(
 	        this.getClass().getSimpleName()

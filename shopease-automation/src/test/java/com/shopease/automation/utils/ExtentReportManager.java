@@ -1,6 +1,8 @@
 package com.shopease.automation.utils;
 
 import java.time.LocalDateTime;
+import java.io.File;
+import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -10,7 +12,7 @@ public class ExtentReportManager {
 
     private static ExtentReports extent;
 
-    public static void initialize(String suiteName) {
+    public static void initialize(String suiteName) throws IOException {
 
         if (extent == null) {
 
@@ -24,6 +26,9 @@ public class ExtentReportManager {
                     new ExtentSparkReporter(
                             "test-output/" + reportName
                     );
+            sparkReporter.loadJSONConfig(
+                    new File("config/spark-config.json")
+            );
 
             extent = new ExtentReports();
 

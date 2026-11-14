@@ -15,6 +15,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.version>3.0.0</allure.version>
         <aspectj.version>1.9.25</aspectj.version>
+        
+        
+        
     </properties>
 
 <dependencyManagement>
@@ -99,6 +102,18 @@
                 ${project.build.directory}/allure-results
             </allure.results.directory>
         </systemPropertyVariables>
+        
+        
+        <properties>
+    <property>
+        <name>listener</name>
+        <value>
+            com.shopease.automation.utils.ExtentSuiteListener,
+            com.shopease.automation.utils.TestListener
+        </value>
+    </property>
+</properties>
+        
     </configuration>
 
     <dependencies>
